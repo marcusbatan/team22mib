@@ -8,6 +8,9 @@ package testande;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -113,6 +116,108 @@ public class listaAliensEfterRas extends javax.swing.JFrame {
 
     private void cmbSorteraEfterRasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cmbSorteraEfterRasKeyPressed
         // TODO add your handling code here:
+          String kategori = cmbSorteraEfterRas.getSelectedItem().toString();
+                
+        if (kategori == "Alla inlägg")
+        {
+            try
+        {
+            
+         String fraga = "SELECT * FROM FORMELL_BLOGG JOIN KATEGORI_FORMELL ON KATEGORIID = "
+                    + "KATEGORI JOIN ANVANDARE ON ANVANDARE.ANVANDARID = FORMELL_BLOGG.ANVANDARID ORDER BY TIDPUNKT DESC";
+                
+                
+            String rubrik = GetQuery(fraga);
+                
+                
+        }
+        catch (Exception bla)
+        {
+             JOptionPane.showMessageDialog(null, "Något gick fel!");
+        }
+        }
+        else if (kategori == "Mina inlägg")
+        {
+            try
+        {
+            
+            String fraga = "SELECT * FROM FORMELL_BLOGG JOIN KATEGORI_FORMELL ON KATEGORIID = "
+                    + "KATEGORI JOIN ANVANDARE ON ANVANDARE.ANVANDARID = FORMELL_BLOGG.ANVANDARID ORDER BY TIDPUNKT DESC";
+                
+                
+            String rubrik = GetQuery(fraga);
+                
+                
+        }
+        catch (Exception bla)
+        {
+             JOptionPane.showMessageDialog(null, "Något gick fel!");
+        }
+        }
+        else
+        {
+            try
+            {
+
+            String fraga= "SELECT * FROM FORMELL_BLOGG JOIN KATEGORI_FORMELL ON KATEGORIID = KATEGORI JOIN ANVANDARE ON ANVANDARE.ANVANDARID = FORMELL_BLOGG.ANVANDARID WHERE KATEGORINAMN = '" + kategori + "' ORDER BY TIDPUNKT DESC";
+
+
+                String rubrik = GetQuery(fraga);
+
+
+            }
+            catch (Exception bla)
+            {
+                 JOptionPane.showMessageDialog(null, "Något gick fel!");
+            }
+        }
+    }
+
+    
+         public String GetQuery(String s)
+    {
+	DB_connection.DB_Connection obj_DB_Connection= new DB_connection.DB_Connection();
+	Connection connection=obj_DB_Connection.get_connection();
+	PreparedStatement ps=null;
+        String rubrik = null;
+        String text = null;
+        String kategori = null;
+        String fornamn = null;
+        String efternamn = null;
+        
+        DefaultTableModel yaya = (DefaultTableModel)jTable2.getModel();
+        int rowCount = yaya.getRowCount();
+        for (int i = rowCount - 1; i >= 0; i--) {
+            yaya.removeRow(i);
+        }
+        
+	try {
+	    String query= s;
+	    ps=connection.prepareStatement(query);
+	    ResultSet rs=ps.executeQuery();
+	    while(rs.next()){
+                rubrik = rs.getString(1);
+                text = rs.getString(2);
+                kategori = rs.getString(9);
+                fornamn = rs.getString(12);
+                efternamn = rs.getString(13);
+                
+                String forfattare = fornamn + " " + efternamn;
+                
+                String resultat = "";                    
+                
+                //resultat+=rubrik + "\n" + "Författare: " + fornamn + ' ' + efternamn + "\n" + "Kategori: " + kategori + "\n" + text +  "\n" + "\n";
+                
+                DefaultTableModel taaInlagg = (DefaultTableModel) jTable2.getModel();
+                taaInlagg.addRow(new Object[]{rubrik,forfattare,kategori});
+                
+                
+	    }
+	} catch (SQLException e) {
+	    System.out.println(e);
+	} 
+        return rubrik;
+    
     }//GEN-LAST:event_cmbSorteraEfterRasKeyPressed
 
 
