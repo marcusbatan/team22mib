@@ -185,7 +185,7 @@ public class listaAliensEfterRas extends javax.swing.JFrame {
         String fornamn = null;
         String efternamn = null;
         
-        DefaultTableModel yaya = (DefaultTableModel)jTable2.getModel();
+        DefaultTableModel yaya = (DefaultTableModel)listaAliens.getModel();
         int rowCount = yaya.getRowCount();
         for (int i = rowCount - 1; i >= 0; i--) {
             yaya.removeRow(i);
@@ -208,7 +208,7 @@ public class listaAliensEfterRas extends javax.swing.JFrame {
                 
                 //resultat+=rubrik + "\n" + "Författare: " + fornamn + ' ' + efternamn + "\n" + "Kategori: " + kategori + "\n" + text +  "\n" + "\n";
                 
-                DefaultTableModel taaInlagg = (DefaultTableModel) jTable2.getModel();
+                DefaultTableModel taaInlagg = (DefaultTableModel) listaAliens.getModel();
                 taaInlagg.addRow(new Object[]{rubrik,forfattare,kategori});
                 
                 
