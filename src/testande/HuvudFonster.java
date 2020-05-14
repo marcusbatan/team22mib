@@ -8,6 +8,8 @@ package testande;
 import javax.swing.JOptionPane;
 import oru.inf.InfDB;
 import oru.inf.InfException;
+import oru.inf.InfException;
+import oru.inf.InfException;
 
 /**
  *
