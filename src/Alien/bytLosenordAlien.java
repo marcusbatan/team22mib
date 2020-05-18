@@ -10,6 +10,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import oru.inf.InfDB;
+import oru.inf.InfException;
 import testande.Validering;
 
 /**
@@ -18,6 +20,8 @@ import testande.Validering;
  */
 public class bytLosenordAlien extends javax.swing.JFrame {
     private String email;
+    private InfDB idb;
+    
    
     /**
      * Creates new form bytLosenordAlien
@@ -25,25 +29,22 @@ public class bytLosenordAlien extends javax.swing.JFrame {
     public bytLosenordAlien() {
         initComponents();
         this.setLocationRelativeTo(null);
+        try
+        {
+        idb = new InfDB("C:\\db\\MIBDB.FDB");
         
     }
+        catch (InfException ettUndantag) {
+            JOptionPane.showMessageDialog(rootPane, "Jävla skit");
+        }
+    }
+    
     public bytLosenordAlien(String e) {
         initComponents();
         this.setLocationRelativeTo(null);
         email = e;
     }
-    public void updateAnvandare(String Q) {
-        DB_connection.DB_Connection obj_DB_Connection = new DB_connection.DB_Connection();
-        Connection connection = obj_DB_Connection.get_connection();
-        PreparedStatement ps = null;
-        try {
-            String query = Q;
-            ps = connection.prepareStatement(query);
-            ps.executeUpdate();
-        } catch (SQLException e) {
-            System.out.println(e);
-        }
-    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
