@@ -15,7 +15,7 @@ public class DB_Connection {
 	Connection connection=null;
         try {
                 Class.forName("com.mysql.jdbc.Driver");
-                connection=DriverManager.getConnection("jdbc:mysql://db4free.net:3306/team4databas","marcusbatan","MsJvyxCm#4JQz8B");
+                connection=DriverManager.getConnection("jdbc:firebirdsql:localhost/3050:/db/MIBDB.fdb","sysdba","masterkey");
 	}
         catch (Exception e) {
 		System.out.println(e);
