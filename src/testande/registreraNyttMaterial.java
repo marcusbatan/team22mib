@@ -5,21 +5,30 @@
  */
 package testande;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 /**
  *
  * @author marku
  */
 public class registreraNyttMaterial extends javax.swing.JFrame {
-
+    String epost;
+    private String char_list = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
     /**
      * Creates new form registreraNyttMaterial
      */
     public registreraNyttMaterial() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
-    registreraNyttMaterial(String epost) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   public registreraNyttMaterial(String e) {
+               initComponents();
+        this.setLocationRelativeTo(null);
+                 epost = e;
+                 
     }
 
     /**
@@ -34,8 +43,9 @@ public class registreraNyttMaterial extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        txtfieldnamn = new javax.swing.JTextField();
+        txtFieldTyp = new javax.swing.JTextField();
+        btnlaggtill = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,9 +56,16 @@ public class registreraNyttMaterial extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel3.setText("Registrera nytt material");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtfieldnamn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtfieldnamnActionPerformed(evt);
+            }
+        });
+
+        btnlaggtill.setText("Lägg till");
+        btnlaggtill.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnlaggtillActionPerformed(evt);
             }
         });
 
@@ -63,13 +80,18 @@ public class registreraNyttMaterial extends javax.swing.JFrame {
                     .addComponent(jLabel1))
                 .addGap(136, 136, 136)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField1)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE))
+                    .addComponent(txtfieldnamn)
+                    .addComponent(txtFieldTyp, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(188, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(142, 142, 142))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(142, 142, 142))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnlaggtill)
+                        .addGap(311, 311, 311))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -79,61 +101,67 @@ public class registreraNyttMaterial extends javax.swing.JFrame {
                 .addGap(131, 131, 131)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtfieldnamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(59, 59, 59)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(184, Short.MAX_VALUE))
+                    .addComponent(txtFieldTyp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(51, 51, 51)
+                .addComponent(btnlaggtill)
+                .addContainerGap(108, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtfieldnamnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfieldnamnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtfieldnamnActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(registreraNyttMaterial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(registreraNyttMaterial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(registreraNyttMaterial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(registreraNyttMaterial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    private void btnlaggtillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlaggtillActionPerformed
+        // TODO add your handling code here:
+        String namn = txtfieldnamn.getText();
+        String typ = txtFieldTyp.getText();
+        if (Validering.baraBokstaver(txtfieldnamn) && Validering.baraBokstaver(txtFieldTyp)){
+        String id = GetAutoId("SELECT MAX(MATERIALID) FROM MATERIAL");
+        String fraga = "INSERT into MATERIAL values ('" + id + "', '" + namn + "', '" + typ +"')";
         }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new registreraNyttMaterial().setVisible(true);
+    }//GEN-LAST:event_btnlaggtillActionPerformed
+            private void emptyBoxes(){
+        txtfieldnamn.setText(null);
+        txtFieldTyp.setText(null);
+    }    
+    
+        public String GetAutoId(String o) {
+        DB_connection.DB_Connection obj_DB_Connection = new DB_connection.DB_Connection();
+        Connection connection = obj_DB_Connection.get_connection();
+        PreparedStatement ps = null;
+        int idNy = 1;
+        try {
+            String query = o;
+            ps = connection.prepareStatement(query);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                idNy = rs.getInt(1);
             }
-        });
+
+        } catch (Exception ex) {
+            System.out.println("Internt felmeddelande: " + ex);
+        }
+
+        idNy = idNy + 1;
+
+        return Integer.toString(idNy);
+  
     }
 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnlaggtill;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField txtFieldTyp;
+    private javax.swing.JTextField txtfieldnamn;
     // End of variables declaration//GEN-END:variables
 }
