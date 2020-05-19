@@ -22,15 +22,11 @@ public class OmradesChef extends javax.swing.JFrame {
     public InfDB idb;
     private String OmradeNamn;
 
-    public OmradesChef() {
+    public OmradesChef(InfDB idb) {
         initComponents();
         this.setLocationRelativeTo(null);
         vemArChef();
-        try {
-            idb = new InfDB("C:\\db\\MIBDB.FDB");
-        } catch (Exception ettUndantag) {
-
-        }
+        this.idb = idb;
     }
 
     public void vemArChef() {
