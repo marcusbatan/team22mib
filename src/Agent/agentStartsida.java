@@ -5,17 +5,25 @@
  */
 package Agent;
 
+import oru.inf.InfDB;
+
 /**
  *
  * @author marku
  */
 public class agentStartsida extends javax.swing.JFrame {
-
+    public InfDB idb;
     /**
      * Creates new form agentStartsida
      */
     public agentStartsida() {
         initComponents();
+                this.idb = idb;
+        this.setLocationRelativeTo(null);
+        try {
+            idb = new InfDB("C:\\db\\MIBDB.FDB");
+        } catch (Exception ettUndantag) {
+        }
     }
 
     /**
@@ -91,7 +99,7 @@ public class agentStartsida extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new skapaAliens().setVisible(rootPaneCheckingEnabled);
+        new skapaAliens(idb).setVisible();
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
