@@ -31,17 +31,18 @@ public class OmradesChef extends javax.swing.JFrame {
 
     public void vemArChef() {
 
-        String fraga = "SELECT BENAMNING FROM OMRADE";
-        ArrayList<String> allaOmrade;
-        try {
-            allaOmrade = idb.fetchColumn(fraga);
-
-            for (String omrade : allaOmrade) {
-                cbOmrode.addItem(omrade);
-            }
-        } catch (InfException e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
+       String fraga = "SELECT BENAMNING FROM OMRADE";
+        ArrayList <String> allaOmrade;
+        try{
+            allaOmrade=idb.fetchColumn(fraga);
+            
+        for(String omrade : allaOmrade){
+            cbOmrode.addItem(omrade);    
         }
+        }
+        catch (InfException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+    }
     }
         
     /**
@@ -57,6 +58,7 @@ public class OmradesChef extends javax.swing.JFrame {
         cbOmrode = new javax.swing.JComboBox<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtResultat = new javax.swing.JTextArea();
+        btntbx = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,6 +73,13 @@ public class OmradesChef extends javax.swing.JFrame {
         txtResultat.setColumns(20);
         txtResultat.setRows(5);
         jScrollPane2.setViewportView(txtResultat);
+
+        btntbx.setText("Tillbaka");
+        btntbx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btntbxActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -87,6 +96,10 @@ public class OmradesChef extends javax.swing.JFrame {
                         .addGap(76, 76, 76)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(111, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btntbx)
+                .addGap(23, 23, 23))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,7 +110,9 @@ public class OmradesChef extends javax.swing.JFrame {
                 .addComponent(cbOmrode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(57, 57, 57)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addComponent(btntbx)
+                .addGap(26, 26, 26))
         );
 
         pack();
@@ -116,7 +131,7 @@ public class OmradesChef extends javax.swing.JFrame {
                         + "WHERE OMRADE.BENAMNING = '" + valdOmrade + "'";
             System.out.println(fraga);
                 
-                soktOmrade =idb.fetchRows(fraga);
+                soktOmrade = idb.fetchRows(fraga);
             
             for(HashMap<String,String> agent : soktOmrade){
                 txtResultat.append(agent.get("AGENT_ID")+"\t");
@@ -135,8 +150,48 @@ public class OmradesChef extends javax.swing.JFrame {
     
     }//GEN-LAST:event_cbOmrodeActionPerformed
 
+    private void btntbxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntbxActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btntbxActionPerformed
 
+    /**
+     * @param args the command line arguments
+     */
+    public void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(OmradesChef.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(OmradesChef.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(OmradesChef.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(OmradesChef.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new OmradesChef(idb).setVisible(true);
+            }
+        });
+    
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btntbx;
     private javax.swing.JComboBox<String> cbOmrode;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
