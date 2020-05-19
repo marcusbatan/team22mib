@@ -32,14 +32,8 @@ public class Start {
     public static void main(String[] args) {
         
         try{
-            String aktuellMap = System.getProperty("user.dir");
-            
-            String sokVag = aktuellMap + ("\\db\\MIBDB.FDB");
-            System.out.println(sokVag);
-            
-            idb = new InfDB(sokVag);
              
-           // idb = new InfDB("C:\\db\\MIBDB.FDB");
+            idb = new InfDB("C:\\db\\MIBDB.FDB");
             new huvudFonster(idb).setVisible(true);
             
         }
