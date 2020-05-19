@@ -254,7 +254,4 @@ public class skapaAliens extends javax.swing.JFrame {
     private javax.swing.JTextField txtTelefonNrAlien;
     // End of variables declaration//GEN-END:variables
 
-    void setVisible() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
