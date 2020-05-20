@@ -14,14 +14,22 @@ import oru.inf.InfDB;
 public class alienStartsida extends javax.swing.JFrame {
 
     public InfDB idb;
+    private String anvandarNamn;
 
     /**
      * Creates new form alienStartsida
      */
-    public alienStartsida(InfDB idb) {
+    public alienStartsida(InfDB idb, String anvandarNamn) {
         initComponents();
         this.idb = idb;
+        this.setLocationRelativeTo(null);
+        this.anvandarNamn = anvandarNamn;
 
+    }
+        public alienStartsida(InfDB idb) {
+        initComponents();
+        this.idb = idb;
+        
     }
 
     /**
@@ -89,7 +97,7 @@ public class alienStartsida extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new andralosen(idb).setVisible(true);
+        new andralosen(idb, anvandarNamn).setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -98,6 +106,38 @@ public class alienStartsida extends javax.swing.JFrame {
         new OmradesChef(idb).setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    public void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(alienStartsida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(alienStartsida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(alienStartsida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(alienStartsida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new alienStartsida(idb, anvandarNamn).setVisible(true);
+            }
+        });
+    }
+        
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

@@ -34,7 +34,7 @@ public class OmradesChef extends javax.swing.JFrame {
        String fraga = "SELECT BENAMNING FROM OMRADE";
         ArrayList <String> allaOmrade;
         try{
-            allaOmrade=idb.fetchColumn(fraga);
+            allaOmrade = idb.fetchColumn(fraga);
             
         for(String omrade : allaOmrade){
             cbOmrode.addItem(omrade);    
