@@ -9,6 +9,7 @@ package Agent;
  *
  * @author hania
  */
+import Admin.NyRegistreraEnAgent;
 import Validering.Validering;
 import java.util.ArrayList;
 import java.util.HashMap;

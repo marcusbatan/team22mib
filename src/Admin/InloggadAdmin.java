@@ -9,6 +9,8 @@ package Admin;
  *
  * @author vince
  */
+import Start.huvudFonster;
+import Validering.Validering;
 import java.util.ArrayList;
 import java.util.HashMap;
 import javax.swing.JOptionPane;
@@ -388,7 +390,7 @@ public class InloggadAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegNyUtrsActionPerformed
 
     private void btnTillbakaAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTillbakaAdminActionPerformed
-        new HuvudFonster(idb).setVisible(true);
+        new huvudFonster(idb).setVisible(true);
             this.dispose();
     }//GEN-LAST:event_btnTillbakaAdminActionPerformed
 
