@@ -25,8 +25,8 @@ public class OmradesChef extends javax.swing.JFrame {
     public OmradesChef(InfDB idb) {
         initComponents();
         this.setLocationRelativeTo(null);
-        vemArChef();
         this.idb = idb;
+        vemArChef();
     }
 
     public void vemArChef() {

@@ -5,6 +5,7 @@
  */
 package Validering;
 
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -143,5 +144,12 @@ public class Validering {
             return false;
         }
     }
-    
+        public static boolean cbValueTrue(JComboBox cb){
+        boolean resultat = true;
+        if(cb.getSelectedIndex() == 0){ 
+            JOptionPane.showMessageDialog(null, "Välj alternativ först!");
+            return false;
+        }
+        return resultat;  
+    }
 }

@@ -30,9 +30,9 @@ public class skapaAliens extends javax.swing.JFrame {
      */
     public skapaAliens(InfDB idb) {
         initComponents();
-        gePlatsAlien();
         this.idb = idb;
         this.setLocationRelativeTo(null);
+        gePlatsAlien();
     }
 
     /**
@@ -153,57 +153,91 @@ public class skapaAliens extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    private void gePlatsAlien(){
+    
+        try{
+            ArrayList<HashMap<String, String>> omrade = idb.fetchRows("SELECT BENAMNING FROM PLATS");
+                for(HashMap<String, String> plats : omrade) {
+                    String omradeLista1= plats.get("BENAMNING");
+                        cmbTilldelatOmrade.addItem(omradeLista1);
+                  }
+                
+             }
+                  catch(InfException e){
+                     JOptionPane.showMessageDialog(null, e.getMessage());
+         }
+    }
+    @SuppressWarnings("unchecked")
+    
+    
+    
     private void btnLaggTillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaggTillActionPerformed
-        // TODO add your handling code here:
-        Object plats = cmbTilldelatOmrade.getSelectedItem();
-        String tilldelatPlats = String.valueOf(plats);
-
-        if (Validering.textFaltHarVarde(txtAnsvarigAgentAlien) && (Validering.textFaltHarVarde(txtNamnNyAlien) && ((Validering.textFaltHarVarde(txtNyttLosenAlien) && (Validering.textFaltHarVarde(txtRegistreringsDatum) && (Validering.textFaltHarVarde(txtTelefonNrAlien))))))) {
-
-            int AlienId = 0;
-            try {
-                int platsId = Integer.parseInt(idb.fetchSingle("SELECT PLATS_ID FROM PLATS WHERE BENAMNING ='" + tilldelatPlats + "'"));
+       Object plats = cmbTilldelatOmrade.getSelectedItem();
+       String tilldelatPlats = String.valueOf(plats);
+       
+        if (Validering.textFaltHarVarde(txtAnsvarigAgentAlien) && (Validering.textFaltHarVarde(txtNamnNyAlien) && ((Validering.textFaltHarVarde(txtNyttLosenAlien)&&(Validering.textFaltHarVarde(txtRegistreringsDatum)&&(Validering.textFaltHarVarde(txtTelefonNrAlien))))))){
+          
+          int AlienId=0;
+           try {
+               int platsId = Integer.parseInt(idb.fetchSingle("SELECT PLATS_ID FROM PLATS WHERE BENAMNING ='" + tilldelatPlats + "'"));
                 AlienId = Integer.parseInt(idb.fetchSingle("SELECT MAX(ALIEN_ID) FROM ALIEN"));
-                AlienId += 1;
-                idb.insert("INSERT INTO ALIEN "
-                        + "(ALIEN_ID, REGISTRERINGSDATUM, LOSENORD, NAMN, TELEFON, PLATS, ANSVARIG_AGENT) "
-                        + "VALUES (" + AlienId + ", "
-                        + "'" + txtRegistreringsDatum.getText() + "', "
-                        + "'" + txtNyttLosenAlien.getText() + "', "
-                        + "'" + txtNamnNyAlien.getText() + "', "
-                        + "'" + txtTelefonNrAlien.getText() + "', "
-                        + "'" + platsId + "', " + "'" + txtAnsvarigAgentAlien.getText() + "')");
-
-                JOptionPane.showMessageDialog(null, "Alien Ã¤r nu Registrerad!");
-
-            } catch (InfException e) {
-                JOptionPane.showMessageDialog(null, e.getMessage());
-                System.out.println("HÄR ÄR FELET");
-            }
+                AlienId +=1;
+            idb.insert("INSERT INTO ALIEN "
+            + "(ALIEN_ID, REGISTRERINGSDATUM, LOSENORD, NAMN, TELEFON, PLATS, ANSVARIG_AGENT) "
+            + "VALUES (" + AlienId + ", "
+            + "'" + txtRegistreringsDatum.getText() + "', "
+            + "'" + txtNyttLosenAlien.getText() + "', "
+            + "'" + txtNamnNyAlien.getText() + "', "
+            + "'" + txtTelefonNrAlien.getText() + "', "
+            
+            +"'"+ platsId + "', " + "'" + txtAnsvarigAgentAlien.getText() + "')");
+            
+            JOptionPane.showMessageDialog(null, "Alien är nu Registrerad!");
+            
+        }        
+             catch (InfException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+            System.out.println("HAR AR FELET"); 
+             }
         }
-
+    
     }//GEN-LAST:event_btnLaggTillActionPerformed
 
     private void cmbTilldelatOmradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbTilldelatOmradeActionPerformed
         // TODO add your handling code here:
         
     }//GEN-LAST:event_cmbTilldelatOmradeActionPerformed
-
-    private void gePlatsAlien() {
-
+         public void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
         try {
-            ArrayList<HashMap<String, String>> omrade = idb.fetchRows("SELECT BENAMNING FROM PLATS");
-            for (HashMap<String, String> plats : omrade) {
-                String omradeLista1 = plats.get("BENAMNING");
-                cmbTilldelatOmrade.addItem(omradeLista1);
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
             }
-
-        } catch (InfException e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(skapaAliens.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(skapaAliens.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(skapaAliens.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(skapaAliens.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-    }
+        //</editor-fold>
 
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new skapaAliens(idb).setVisible(true);
+            }
+            });
+         }
              
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLaggTill;

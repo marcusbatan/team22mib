@@ -14,14 +14,22 @@ import oru.inf.InfDB;
 public class agentStartsida extends javax.swing.JFrame {
 
     public InfDB idb;
+    private String anvandarNamn;
 
     /**
      * Creates new form agentStartsida
      */
-    public agentStartsida() {
+    public agentStartsida(InfDB idb) {
         initComponents();
         this.idb = idb;
-        this.setLocationRelativeTo(null);
+        
+    }
+
+    public agentStartsida(InfDB idb, String anvandarNamn) {
+       initComponents();
+       this.setLocationRelativeTo(null);
+       this.idb = idb;
+       this.anvandarNamn= anvandarNamn;
     }
 
     /**
@@ -38,6 +46,9 @@ public class agentStartsida extends javax.swing.JFrame {
         btnAndraInfoAlien = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        btnTaBortAlien = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        btnAndraMittLosen = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,6 +72,27 @@ public class agentStartsida extends javax.swing.JFrame {
 
         jButton4.setText("Lista aliens efter ras");
 
+        btnTaBortAlien.setText("Ta bort alien");
+        btnTaBortAlien.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTaBortAlienActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Registrera ny utrustning");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        btnAndraMittLosen.setText("Ändra mitt lösenord");
+        btnAndraMittLosen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAndraMittLosenActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -72,28 +104,41 @@ public class agentStartsida extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(btnAndraInfoAlien, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
-                            .addComponent(btnRegAlien, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(jButton3)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(132, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(btnAndraInfoAlien, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
+                                    .addComponent(btnRegAlien, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jButton3))
+                        .addGap(92, 92, 92)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnTaBortAlien, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+                            .addComponent(btnAndraMittLosen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(235, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
-                .addComponent(btnRegAlien)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRegAlien)
+                    .addComponent(btnTaBortAlien))
                 .addGap(29, 29, 29)
-                .addComponent(btnAndraInfoAlien)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAndraInfoAlien)
+                    .addComponent(jButton1))
                 .addGap(38, 38, 38)
-                .addComponent(jButton3)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton3)
+                    .addComponent(btnAndraMittLosen))
                 .addGap(34, 34, 34)
                 .addComponent(jButton4)
-                .addGap(0, 38, Short.MAX_VALUE))
+                .addGap(0, 149, Short.MAX_VALUE))
         );
 
         pack();
@@ -101,19 +146,36 @@ public class agentStartsida extends javax.swing.JFrame {
 
     private void btnRegAlienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegAlienActionPerformed
         // TODO add your handling code here:
-        this.dispose();
         new skapaAliens(idb).setVisible(true);
     }//GEN-LAST:event_btnRegAlienActionPerformed
 
     private void btnAndraInfoAlienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAndraInfoAlienActionPerformed
         // TODO add yo handling code here:
-       new andraInfoAlien(idb).setVisible(true);
+        new andraInfoAlien(idb).setVisible(true);
     }//GEN-LAST:event_btnAndraInfoAlienActionPerformed
+
+    private void btnTaBortAlienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTaBortAlienActionPerformed
+        // TODO add your handling code here:
+        new TaBortAlien(idb).setVisible(true);
+    }//GEN-LAST:event_btnTaBortAlienActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        new RegistreraNyUtrustning(idb).setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnAndraMittLosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAndraMittLosenActionPerformed
+        // TODO add your handling code here:
+        new AndraLosenordAgent(idb).setVisible(true);
+    }//GEN-LAST:event_btnAndraMittLosenActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAndraInfoAlien;
+    private javax.swing.JButton btnAndraMittLosen;
     private javax.swing.JButton btnRegAlien;
+    private javax.swing.JButton btnTaBortAlien;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;

@@ -143,7 +143,7 @@ public class agentLogin extends javax.swing.JFrame {
                 if (Alien != null && Alien.equals(losenOrd)) {
                     this.dispose();
                     System.out.println("inlogget lyckades");
-                    new agentStartsida().setVisible(true);
+                    new agentStartsida(idb).setVisible(true);
                 }
             } catch (InfException e) {
                 JOptionPane.showMessageDialog(null, e.getMessage());
