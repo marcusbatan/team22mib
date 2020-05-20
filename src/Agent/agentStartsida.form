@@ -30,29 +30,34 @@
                       <Component id="jLabel1" min="-2" pref="135" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton4" min="-2" pref="168" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
+                          <Component id="jButton3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="btnAndraInfoAlien" alignment="0" pref="169" max="32767" attributes="0"/>
-                                  <Component id="btnRegAlien" alignment="0" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="btnAndraInfoAlien" alignment="0" pref="169" max="32767" attributes="0"/>
+                                      <Component id="btnRegAlien" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="jButton4" alignment="0" min="-2" pref="168" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="jButton3" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="btnTaBortAlien" max="32767" attributes="0"/>
-                          <Component id="jButton1" pref="173" max="32767" attributes="0"/>
+                          <Component id="jButton1" max="32767" attributes="0"/>
                           <Component id="btnAndraMittLosen" max="32767" attributes="0"/>
+                          <Component id="btnSeAllaAliensIOmrAgent" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btnSeOmradesChef" max="32767" attributes="0"/>
+                          <Component id="btnSeReggadeAliensMellanTvåDatum" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="235" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -64,11 +69,13 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnRegAlien" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnTaBortAlien" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnSeOmradesChef" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnAndraInfoAlien" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnSeReggadeAliensMellanTvåDatum" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -76,7 +83,10 @@
                   <Component id="btnAndraMittLosen" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-              <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jButton4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnSeAllaAliensIOmrAgent" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace min="0" pref="149" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -136,6 +146,30 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAndraMittLosenActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnSeAllaAliensIOmrAgent">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Se alla aliens i ett omr&#xe5;de"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSeAllaAliensIOmrAgentActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnSeOmradesChef">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Se chef f&#xf6;r omr&#xe5;de"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSeOmradesChefActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnSeReggadeAliensMellanTv&#xe5;Datum">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Se registrerade aliens mellan datum"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSeReggadeAliensMellanTv&#xe5;DatumActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

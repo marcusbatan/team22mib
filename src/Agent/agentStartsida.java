@@ -49,6 +49,9 @@ public class agentStartsida extends javax.swing.JFrame {
         btnTaBortAlien = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         btnAndraMittLosen = new javax.swing.JButton();
+        btnSeAllaAliensIOmrAgent = new javax.swing.JButton();
+        btnSeOmradesChef = new javax.swing.JButton();
+        btnSeReggadeAliensMellanTvåDatum = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -93,6 +96,27 @@ public class agentStartsida extends javax.swing.JFrame {
             }
         });
 
+        btnSeAllaAliensIOmrAgent.setText("Se alla aliens i ett område");
+        btnSeAllaAliensIOmrAgent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeAllaAliensIOmrAgentActionPerformed(evt);
+            }
+        });
+
+        btnSeOmradesChef.setText("Se chef för område");
+        btnSeOmradesChef.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeOmradesChefActionPerformed(evt);
+            }
+        });
+
+        btnSeReggadeAliensMellanTvåDatum.setText("Se registrerade aliens mellan datum");
+        btnSeReggadeAliensMellanTvåDatum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeReggadeAliensMellanTvåDatumActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -103,22 +127,26 @@ public class agentStartsida extends javax.swing.JFrame {
                         .addGap(133, 133, 133)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton3)
                             .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(btnAndraInfoAlien, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
-                                    .addComponent(btnRegAlien, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addComponent(jButton3))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(btnAndraInfoAlien, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
+                                        .addComponent(btnRegAlien, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(92, 92, 92)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnTaBortAlien, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
-                            .addComponent(btnAndraMittLosen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(235, Short.MAX_VALUE))
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnAndraMittLosen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnSeAllaAliensIOmrAgent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(42, 42, 42)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnSeOmradesChef, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnSeReggadeAliensMellanTvåDatum, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,17 +155,21 @@ public class agentStartsida extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRegAlien)
-                    .addComponent(btnTaBortAlien))
+                    .addComponent(btnTaBortAlien)
+                    .addComponent(btnSeOmradesChef))
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAndraInfoAlien)
-                    .addComponent(jButton1))
+                    .addComponent(jButton1)
+                    .addComponent(btnSeReggadeAliensMellanTvåDatum))
                 .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
                     .addComponent(btnAndraMittLosen))
                 .addGap(34, 34, 34)
-                .addComponent(jButton4)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton4)
+                    .addComponent(btnSeAllaAliensIOmrAgent))
                 .addGap(0, 149, Short.MAX_VALUE))
         );
 
@@ -169,11 +201,29 @@ public class agentStartsida extends javax.swing.JFrame {
         new AndraLosenordAgent(idb).setVisible(true);
     }//GEN-LAST:event_btnAndraMittLosenActionPerformed
 
+    private void btnSeAllaAliensIOmrAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeAllaAliensIOmrAgentActionPerformed
+        // TODO add your handling code here:
+        new seAllaAliensIOmrade(idb).setVisible(true);
+    }//GEN-LAST:event_btnSeAllaAliensIOmrAgentActionPerformed
+
+    private void btnSeOmradesChefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeOmradesChefActionPerformed
+        // TODO add your handling code here:
+       new SeOmradesChef(idb).setVisible(true);
+    }//GEN-LAST:event_btnSeOmradesChefActionPerformed
+
+    private void btnSeReggadeAliensMellanTvåDatumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeReggadeAliensMellanTvåDatumActionPerformed
+        // TODO add your handling code here:
+        new SokAliensMellan2Datum(idb).setVisible(true);
+    }//GEN-LAST:event_btnSeReggadeAliensMellanTvåDatumActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAndraInfoAlien;
     private javax.swing.JButton btnAndraMittLosen;
     private javax.swing.JButton btnRegAlien;
+    private javax.swing.JButton btnSeAllaAliensIOmrAgent;
+    private javax.swing.JButton btnSeOmradesChef;
+    private javax.swing.JButton btnSeReggadeAliensMellanTvåDatum;
     private javax.swing.JButton btnTaBortAlien;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
