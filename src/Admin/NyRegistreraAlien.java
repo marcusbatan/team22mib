@@ -38,9 +38,9 @@ public class NyRegistreraAlien extends javax.swing.JFrame {
     private void gePlatsAlien(){
     
         try{
-            ArrayList<HashMap<String, String>> omrade = idb.fetchRows("SELECT BENAMNING FROM PLATS");
+            ArrayList<HashMap<String, String>> omrade = idb.fetchRows("SELECT PLATS_ID FROM PLATS");
                 for(HashMap<String, String> plats : omrade) {
-                    String omradeLista1= plats.get("BENAMNING");
+                    String omradeLista1= plats.get("PLATS_ID");
                         cmbTilldelatOmrade.addItem(omradeLista1);
                   }
                 
@@ -230,19 +230,19 @@ public class NyRegistreraAlien extends javax.swing.JFrame {
        String tilldelatPlats = String.valueOf(plats);
        
         if (Validering.textFaltHarVarde(txtAnsvarigAgentAlien) && (Validering.textFaltHarVarde(txtNamnNyAlien) && ((Validering.textFaltHarVarde(txtNyttLosenAlien)&&(Validering.textFaltHarVarde(txtRegistreringsDatum)&&(Validering.textFaltHarVarde(txtTelefonNrAlien))))))){
-          
           int AlienId=0;
            try {
+               System.out.println(plats);
                int platsId = Integer.parseInt(idb.fetchSingle("SELECT PLATS_ID FROM PLATS WHERE BENAMNING ='" + tilldelatPlats + "'"));
                 AlienId = Integer.parseInt(idb.fetchSingle("SELECT MAX(ALIEN_ID) FROM ALIEN"));
                 AlienId +=1;
-            idb.insert("INSERT INTO ALIEN "
-            + "(ALIEN_ID, REGISTRERINGSDATUM, LOSENORD, NAMN, TELEFON, PLATS, ANSVARIG_AGENT) "
-            + "VALUES (" + AlienId + ", "
-            + "'" + txtRegistreringsDatum.getText() + "', "
-            + "'" + txtNyttLosenAlien.getText() + "', "
-            + "'" + txtNamnNyAlien.getText() + "', "
-            + "'" + txtTelefonNrAlien.getText() + "', "
+            idb.insert(txtTelefonNrAlien.getText() + "INSERT INTO ALIEN "
+                    + "(ALIEN_ID, REGISTRERINGSDATUM, LOSENORD, NAMN, TELEFON, PLATS, ANSVARIG_AGENT) "
+                    + "VALUES (" + AlienId + ", "
+                            + "'" + txtRegistreringsDatum.getText() + "', "
+                                    + "'" + txtNyttLosenAlien.getText() + "', "
+                                            + "'" + txtNamnNyAlien.getText() + "', "
+                                                    + "'" + "', "
             
             +"'"+ platsId + "', " + "'" + txtAnsvarigAgentAlien.getText() + "')");
             

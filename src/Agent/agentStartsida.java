@@ -226,7 +226,7 @@ public class agentStartsida extends javax.swing.JFrame {
 
     private void btnAndraMittLosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAndraMittLosenActionPerformed
         // TODO add your handling code here:
-        new AndraLosenordAgent1(idb).setVisible(true);
+        new AndraLosenordAgent1(idb, anvandarNamn).setVisible(true);
     }//GEN-LAST:event_btnAndraMittLosenActionPerformed
 
     private void btnSeAllaAliensIOmrAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeAllaAliensIOmrAgentActionPerformed
