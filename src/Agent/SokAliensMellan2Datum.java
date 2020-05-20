@@ -156,13 +156,13 @@ public class SokAliensMellan2Datum extends javax.swing.JFrame {
 
     private void btnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTillbakaActionPerformed
         // TODO add your handling code here:
-        txtAreaResultat.setText("");
-        StringToSQLDateExample();
+        this.dispose();
     }//GEN-LAST:event_btnTillbakaActionPerformed
 
     private void btnSokActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSokActionPerformed
         // TODO add your handling code here:
-        this.dispose();
+        txtAreaResultat.setText("");
+        StringToSQLDateExample();
     }//GEN-LAST:event_btnSokActionPerformed
 
     /**
