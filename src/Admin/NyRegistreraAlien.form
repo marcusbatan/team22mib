@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="213" max="-2" attributes="0"/>
+              <Component id="lblNyRegistreraAlien" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblRegistreringsDatum" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel1" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
+                          <Component id="lblTelefonNrAlien" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblTilldelatOmradeAlien" min="-2" pref="104" max="-2" attributes="0"/>
+                          <Component id="lblNyttLosenAlien" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="txtNyttLosenAlien" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="txtTelefonNrAlien" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtNamnNyAlien" min="-2" pref="115" max="-2" attributes="0"/>
+                                          <Component id="txtRegistreringsDatum" min="-2" pref="89" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace pref="147" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="cmbTilldelatOmrade" min="-2" pref="108" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="btnRegistreraAlien" min="-2" pref="107" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="196" max="-2" attributes="0"/>
+                              <Component id="btnTillbakaAlienRegistrering" min="-2" pref="77" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="lblAnsvarigAgentAlien" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                              <Component id="txtAnsvarigAgentAlien" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="35" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+              <Component id="lblNyRegistreraAlien" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="txtNamnNyAlien" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblRegistreringsDatum" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtRegistreringsDatum" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblTelefonNrAlien" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtTelefonNrAlien" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="24" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblTilldelatOmradeAlien" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cmbTilldelatOmrade" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblNyttLosenAlien" alignment="3" max="32767" attributes="0"/>
+                  <Component id="txtNyttLosenAlien" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="txtAnsvarigAgentAlien" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblAnsvarigAgentAlien" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnRegistreraAlien" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnTillbakaAlienRegistrering" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="lblNyRegistreraAlien">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nyregistrera Alien"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Namn"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtNamnNyAlien">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Skriv in namn"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNamnNyAlienActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblRegistreringsDatum">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Registreringsdatum"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtRegistreringsDatum">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ex:2019-12-20"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblTelefonNrAlien">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Telefon Nummer"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtTelefonNrAlien">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Skriv in Telefonnumret"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblTilldelatOmradeAlien">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tilldelat Omr&#xe5;de"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblAnsvarigAgentAlien">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ansvarig Agent"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtAnsvarigAgentAlien">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Skriv in Agent ID "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblNyttLosenAlien">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nytt L&#xf6;senord"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtNyttLosenAlien">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Skriv in nya l&#xf6;senordet"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnRegistreraAlien">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Registrera"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegistreraAlienActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnTillbakaAlienRegistrering">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tillbaka"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTillbakaAlienRegistreringActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cmbTilldelatOmrade">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="1">
+            <StringItem index="0" value="V&#xe4;lj Plats"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmbTilldelatOmradeActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+  </SubComponents>
+</Form>

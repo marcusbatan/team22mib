@@ -5,6 +5,7 @@
  */
 package Start;
 
+import Admin.InloggningAdmin;
 import Agent.agentLogin;
 import Alien.alienLogin;
 import oru.inf.InfDB;
@@ -50,6 +51,11 @@ public class huvudFonster extends javax.swing.JFrame {
         });
 
         btnLoginAdmin.setText("Log in admin");
+        btnLoginAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginAdminActionPerformed(evt);
+            }
+        });
 
         btnLoginAlien.setText("Log in alien");
         btnLoginAlien.addActionListener(new java.awt.event.ActionListener() {
@@ -106,6 +112,11 @@ public class huvudFonster extends javax.swing.JFrame {
         new alienLogin(idb).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnLoginAlienActionPerformed
+
+    private void btnLoginAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginAdminActionPerformed
+        // TODO add your handling code here:
+        new InloggningAdmin(idb).setVisible(true);
+    }//GEN-LAST:event_btnLoginAdminActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

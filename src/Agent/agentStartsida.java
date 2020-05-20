@@ -22,14 +22,14 @@ public class agentStartsida extends javax.swing.JFrame {
     public agentStartsida(InfDB idb) {
         initComponents();
         this.idb = idb;
-        
+
     }
 
     public agentStartsida(InfDB idb, String anvandarNamn) {
-       initComponents();
-       this.setLocationRelativeTo(null);
-       this.idb = idb;
-       this.anvandarNamn= anvandarNamn;
+        initComponents();
+        this.setLocationRelativeTo(null);
+        this.idb = idb;
+        this.anvandarNamn = anvandarNamn;
     }
 
     /**
@@ -121,6 +121,11 @@ public class agentStartsida extends javax.swing.JFrame {
         });
 
         jButton2.setText("Logga ut");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -201,12 +206,12 @@ public class agentStartsida extends javax.swing.JFrame {
 
     private void btnRegAlienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegAlienActionPerformed
         // TODO add your handling code here:
-        new skapaAliens(idb).setVisible(true);
+        new NyRegistreraAlien(idb).setVisible(true);
     }//GEN-LAST:event_btnRegAlienActionPerformed
 
     private void btnAndraInfoAlienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAndraInfoAlienActionPerformed
         // TODO add yo handling code here:
-        new andraInfoAlien(idb).setVisible(true);
+        new AndraAlienInfo(idb).setVisible(true);
     }//GEN-LAST:event_btnAndraInfoAlienActionPerformed
 
     private void btnTaBortAlienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTaBortAlienActionPerformed
@@ -221,17 +226,17 @@ public class agentStartsida extends javax.swing.JFrame {
 
     private void btnAndraMittLosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAndraMittLosenActionPerformed
         // TODO add your handling code here:
-        new AndraLosenordAgent(idb).setVisible(true);
+        new AndraLosenordAgent1(idb).setVisible(true);
     }//GEN-LAST:event_btnAndraMittLosenActionPerformed
 
     private void btnSeAllaAliensIOmrAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeAllaAliensIOmrAgentActionPerformed
         // TODO add your handling code here:
-        new seAllaAliensIOmrade(idb).setVisible(true);
+        new SokAlienEfterPlats(idb).setVisible(true);
     }//GEN-LAST:event_btnSeAllaAliensIOmrAgentActionPerformed
 
     private void btnSeOmradesChefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeOmradesChefActionPerformed
         // TODO add your handling code here:
-       new SeOmradesChef(idb).setVisible(true);
+        new SeOmradesChef(idb).setVisible(true);
     }//GEN-LAST:event_btnSeOmradesChefActionPerformed
 
     private void btnSeReggadeAliensMellanTvåDatumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeReggadeAliensMellanTvåDatumActionPerformed
@@ -243,6 +248,11 @@ public class agentStartsida extends javax.swing.JFrame {
         // TODO add your handling code here:
         new SokAliensForEnRas(idb).setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.JCheckBoxMenuItem" name="jCheckBoxMenuItem1">
+      <Properties>
+        <Property name="selected" type="boolean" value="true"/>
+        <Property name="text" type="java.lang.String" value="jCheckBoxMenuItem1"/>
+      </Properties>
+    </Component>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace pref="53" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="btnTest" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="cmbAndraKontorsChef" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnAndraKontChef" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="btnTaBortAgent" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnTaBortAlienAdmin" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnTaBortUtrusAdmin" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnAndraLosenAdmin" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="btnAndraAgentInfAdmin" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnAndraAlienInfAdmin" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnSeRegAlienTvaDatum" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnSeAllInfoOmEnAlien" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnGeAgentOmrChefStatusOk" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnSeOmradesChefForEttOmrade" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="btnNyRegAlienAdmin" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnSokAlienForEnRas" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnNyRegAgentAdmin" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                              <Component id="btnTillbakaAdmin" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnRegNyUtrs" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="btnSokAliensPlats" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="lblAndraKontChef" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="362" max="-2" attributes="0"/>
+              <Component id="lblRubrikAdmin" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+              <Component id="lblRubrikAdmin" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+              <Component id="lblAndraKontChef" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnNyRegAgentAdmin" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnAndraAgentInfAdmin" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnAndraKontChef" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cmbAndraKontorsChef" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnNyRegAlienAdmin" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnAndraAlienInfAdmin" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnTest" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnSokAlienForEnRas" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnTaBortAgent" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnSeOmradesChefForEttOmrade" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnTaBortAlienAdmin" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnSokAliensPlats" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnSeAllInfoOmEnAlien" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnTaBortUtrusAdmin" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnRegNyUtrs" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnGeAgentOmrChefStatusOk" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="btnSeRegAlienTvaDatum" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="20" max="32767" attributes="0"/>
+                      <Component id="btnTillbakaAdmin" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="btnAndraLosenAdmin" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="lblRubrikAdmin">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="Inloggad som Admin:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblAndraKontChef">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#xc4;ndra KontorsChef"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnNyRegAgentAdmin">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nyregistrera En Agent"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNyRegAgentAdminActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnNyRegAlienAdmin">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nyregistrera en Alien"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNyRegAlienAdminActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAndraAgentInfAdmin">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#xc4;ndra All Information Om En Agent"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAndraAgentInfAdminActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAndraAlienInfAdmin">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#xc4;ndra All Information Om En Alien"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAndraAlienInfAdminActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnTillbakaAdmin">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Logga Ut"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTillbakaAdminActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnTaBortAgent">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ta Bort En Agent"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTaBortAgentActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnTaBortAlienAdmin">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ta Bort En Alien"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTaBortAlienAdminActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAndraKontChef">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ok"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAndraKontChefActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnTaBortUtrusAdmin">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ta Bort Utrustning"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTaBortUtrusAdminActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAndraLosenAdmin">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#xc4;ndra L&#xf6;senord"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAndraLosenAdminActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnSokAliensPlats">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="S&#xf6;k Aliens F&#xf6;r En Plats"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSokAliensPlatsActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnSeRegAlienTvaDatum">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="S&#xf6;k Aliens Registrerade Mellan Tv&#xe5; Datum"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSeRegAlienTvaDatumActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnRegNyUtrs">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Registrera Ny Utrustning"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegNyUtrsActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnSeAllInfoOmEnAlien">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Se All Information Om En Alien"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSeAllInfoOmEnAlienActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnSeOmradesChefForEttOmrade">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="S&#xf6;k Omr&#xe5;deschef F&#xf6;r Ett Omr&#xe5;de"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSeOmradesChefForEttOmradeActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnSokAlienForEnRas">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="S&#xf6;k Aliens F&#xf6;r En Ras"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSokAlienForEnRasActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnGeAgentOmrChefStatusOk">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ge en Agent omr&#xe5;deschefsstatus"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGeAgentOmrChefStatusOkActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cmbAndraKontorsChef">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="1">
+            <StringItem index="0" value="V&#xe4;lj En Ny Kontorschef:"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmbAndraKontorsChefActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnTest">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ge En Agent Administrat&#xf6;rsstatus"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTestActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
+</Form>
