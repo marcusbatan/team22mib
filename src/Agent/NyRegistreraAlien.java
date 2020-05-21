@@ -21,10 +21,10 @@ import oru.inf.InfException;
 
 public class NyRegistreraAlien extends javax.swing.JFrame {
 
+    
     private InfDB idb;
-    private ArrayList<String> omradeLista;
+    private ArrayList <String> omradeLista;
     private Integer platsAlien;
-
     /**
      * Creates new form NyRegistreraAlien
      */
@@ -33,26 +33,32 @@ public class NyRegistreraAlien extends javax.swing.JFrame {
         this.idb = idb;
         gePlatsAlien();
         this.setLocationRelativeTo(null);
-
+        
     }
 
-    private void gePlatsAlien() {
-
-        try {
+    private void gePlatsAlien(){
+    
+        try{
             ArrayList<HashMap<String, String>> omrade = idb.fetchRows("SELECT BENAMNING FROM PLATS");
-            for (HashMap<String, String> plats : omrade) {
-                String omradeLista1 = plats.get("BENAMNING");
-                cmbTilldelatOmrade.addItem(omradeLista1);
-            }
-
-        } catch (InfException e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
+                for(HashMap<String, String> plats : omrade) {
+                    String omradeLista1= plats.get("BENAMNING");
+                        cmbTilldelatOmrade.addItem(omradeLista1);
+                  }
+                
+             }
+                  catch(InfException e){
+                     JOptionPane.showMessageDialog(null, e.getMessage());
+         }
     }
-
     @SuppressWarnings("unchecked")
-
-
+    
+    
+    
+    
+    
+    
+    
+    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -216,40 +222,44 @@ public class NyRegistreraAlien extends javax.swing.JFrame {
 
     private void btnTillbakaAlienRegistreringActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTillbakaAlienRegistreringActionPerformed
 
+        
         this.dispose();
     }//GEN-LAST:event_btnTillbakaAlienRegistreringActionPerformed
 
     private void btnRegistreraAlienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistreraAlienActionPerformed
-        Object plats = cmbTilldelatOmrade.getSelectedItem();
-        String tilldelatPlats = String.valueOf(plats);
-
-        if (Validering.textFaltHarVarde(txtAnsvarigAgentAlien) && (Validering.textFaltHarVarde(txtNamnNyAlien) && ((Validering.textFaltHarVarde(txtNyttLosenAlien) && (Validering.textFaltHarVarde(txtRegistreringsDatum) && (Validering.textFaltHarVarde(txtTelefonNrAlien))))))) {
-
-            int AlienId = 0;
-            try {
-                int platsId = Integer.parseInt(idb.fetchSingle("SELECT PLATS_ID FROM PLATS WHERE BENAMNING ='" + tilldelatPlats + "'"));
+       Object plats = cmbTilldelatOmrade.getSelectedItem();
+       String tilldelatPlats = String.valueOf(plats);
+       
+        if (Validering.textNotEmpty(txtAnsvarigAgentAlien) && (Validering.textNotEmpty(txtNamnNyAlien) && ((Validering.textNotEmpty(txtNyttLosenAlien)&&(Validering.textNotEmpty(txtRegistreringsDatum)&&(Validering.textNotEmpty(txtTelefonNrAlien))))))){
+          
+          int AlienId=0;
+           try {
+               int platsId = Integer.parseInt(idb.fetchSingle("SELECT PLATS_ID FROM PLATS WHERE BENAMNING ='" + tilldelatPlats + "'"));
                 AlienId = Integer.parseInt(idb.fetchSingle("SELECT MAX(ALIEN_ID) FROM ALIEN"));
-                AlienId += 1;
-                idb.insert("INSERT INTO ALIEN "
-                        + "(ALIEN_ID, REGISTRERINGSDATUM, LOSENORD, NAMN, TELEFON, PLATS, ANSVARIG_AGENT) "
-                        + "VALUES (" + AlienId + ", "
-                        + "'" + txtRegistreringsDatum.getText() + "', "
-                        + "'" + txtNyttLosenAlien.getText() + "', "
-                        + "'" + txtNamnNyAlien.getText() + "', "
-                        + "'" + txtTelefonNrAlien.getText() + "', "
-                        + "'" + platsId + "', " + "'" + txtAnsvarigAgentAlien.getText() + "')");
-
-                JOptionPane.showMessageDialog(null, "Alien är nu Registrerad!");
-
-            } catch (InfException e) {
-                JOptionPane.showMessageDialog(null, e.getMessage());
-                System.out.println("H�R �R FELET");
-            }
+                AlienId +=1;
+            idb.insert("INSERT INTO ALIEN "
+            + "(ALIEN_ID, REGISTRERINGSDATUM, LOSENORD, NAMN, TELEFON, PLATS, ANSVARIG_AGENT) "
+            + "VALUES (" + AlienId + ", "
+            + "'" + txtRegistreringsDatum.getText() + "', "
+            + "'" + txtNyttLosenAlien.getText() + "', "
+            + "'" + txtNamnNyAlien.getText() + "', "
+            + "'" + txtTelefonNrAlien.getText() + "', "
+            
+            +"'"+ platsId + "', " + "'" + txtAnsvarigAgentAlien.getText() + "')");
+            
+            JOptionPane.showMessageDialog(null, "Alien är nu Registrerad!");
+            
+        }        
+             catch (InfException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+            System.out.println("H�R �R FELET"); 
+             }
         }
     }
 
-    //* @param args the command line arguments
-    public void main(String args[]) {
+               //* @param args the command line arguments
+     
+         public void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -278,16 +288,31 @@ public class NyRegistreraAlien extends javax.swing.JFrame {
             public void run() {
                 new NyRegistreraEnAgent(idb).setVisible(true);
             }
-        });
+            });
+            
+                
+                
 
-
+                
+        
+           
+           
+     
+              
+            
+        
+       
+        
+        
     }//GEN-LAST:event_btnRegistreraAlienActionPerformed
 
     private void cmbTilldelatOmradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbTilldelatOmradeActionPerformed
-
-
+ 
+       
     }//GEN-LAST:event_cmbTilldelatOmradeActionPerformed
-
+                
+     
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegistreraAlien;
@@ -307,4 +332,11 @@ public class NyRegistreraAlien extends javax.swing.JFrame {
     private javax.swing.JTextField txtTelefonNrAlien;
     // End of variables declaration//GEN-END:variables
 
+    
+
+   
+    
+        
 }
+        
+                

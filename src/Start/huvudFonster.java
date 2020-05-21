@@ -6,8 +6,8 @@
 package Start;
 
 import Admin.InloggningAdmin;
-import Agent.agentLogin;
-import Alien.alienLogin;
+import Agent.InloggningAgent;
+import Alien.InloggningAlien;
 import oru.inf.InfDB;
 
 /**
@@ -103,19 +103,21 @@ public class huvudFonster extends javax.swing.JFrame {
 
     private void btnLoginAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginAgentActionPerformed
         // TODO add your handling code here:
-        new agentLogin(idb).setVisible(true);
+        new InloggningAgent(idb).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnLoginAgentActionPerformed
 
     private void btnLoginAlienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginAlienActionPerformed
         // TODO add your handling code here:
-        new alienLogin(idb).setVisible(true);
+        new InloggningAlien(idb).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnLoginAlienActionPerformed
 
     private void btnLoginAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginAdminActionPerformed
         // TODO add your handling code here:
         new InloggningAdmin(idb).setVisible(true);
+                this.dispose();
+
     }//GEN-LAST:event_btnLoginAdminActionPerformed
 
 

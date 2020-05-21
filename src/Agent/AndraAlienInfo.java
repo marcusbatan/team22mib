@@ -251,8 +251,8 @@ public class AndraAlienInfo extends javax.swing.JFrame {
     }//GEN-LAST:event_JcValjAlienActionPerformed
 
     private void btnAndraAlienInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAndraAlienInfoActionPerformed
-         if (Validering.textFaltHarVarde(txtAndraAnsvAgentAlienAdmin) && (Validering.textFaltHarVarde(txtAndraIDAlienAdmin) && (Validering.textFaltHarVarde(txtAndraLosenAlienAdmin)&&
-                 (Validering.textFaltHarVarde(txtAndraNamnAlienAdmin)&&(Validering.textFaltHarVarde(txtAndraPlatsAlienAdmin)&&(Validering.textFaltHarVarde(txtAndraRegDatumAlienAdmin)&&(Validering.textFaltHarVarde(txtAndraTelefonAlienAdmin)))))))) { // validering
+         if (Validering.textNotEmpty(txtAndraAnsvAgentAlienAdmin) && (Validering.textNotEmpty(txtAndraIDAlienAdmin) && (Validering.textNotEmpty(txtAndraLosenAlienAdmin)&&
+                 (Validering.textNotEmpty(txtAndraNamnAlienAdmin)&&(Validering.textNotEmpty(txtAndraPlatsAlienAdmin)&&(Validering.textNotEmpty(txtAndraRegDatumAlienAdmin)&&(Validering.textNotEmpty(txtAndraTelefonAlienAdmin)))))))) { // validering
             if (Validering.cbValueTrue(JcValjAlien)) {
                
                 

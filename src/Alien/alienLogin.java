@@ -126,7 +126,7 @@ public class alienLogin extends javax.swing.JFrame {
                 if (Alien != null && Alien.equals(losenOrd)) {
                     this.dispose();
                     System.out.println("inlogget lyckades");
-                    new alienStartsida(idb).setVisible(true);
+                    new InloggadAlien(idb).setVisible(true);
                 }
             } catch (InfException e) {
                 JOptionPane.showMessageDialog(null, e.getMessage());

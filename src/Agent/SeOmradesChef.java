@@ -7,19 +7,18 @@ package Agent;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import oru.inf.InfDB;
 import oru.inf.InfException;
 
 /**
  *
- * @author marku
+ * @author erikgoransson
  */
 public class SeOmradesChef extends javax.swing.JFrame {
 
-    /**
-     * Creates new form SeOmradesChef
-     */
     private InfDB idb;
     private String OmradeNamn;
     /**
@@ -32,6 +31,7 @@ public class SeOmradesChef extends javax.swing.JFrame {
         this.idb = idb;
         vemArChef();
     }
+
     public void vemArChef() {
 
        String fraga = "SELECT BENAMNING FROM OMRADE";
@@ -47,7 +47,6 @@ public class SeOmradesChef extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, e.getMessage());
     }
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -61,12 +60,13 @@ public class SeOmradesChef extends javax.swing.JFrame {
         cmbOmrade = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtResultat = new javax.swing.JTextArea();
+        btnTillbaka = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Se vem som är chef i området");
+        jLabel1.setText("Se Områdeschef");
 
-        cmbOmrade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Välj område" }));
+        cmbOmrade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Välj Ett Område" }));
         cmbOmrade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbOmradeActionPerformed(evt);
@@ -77,40 +77,55 @@ public class SeOmradesChef extends javax.swing.JFrame {
         txtResultat.setRows(5);
         jScrollPane1.setViewportView(txtResultat);
 
+        btnTillbaka.setText("Tillbaka");
+        btnTillbaka.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTillbakaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(182, 182, 182)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cmbOmrade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(111, 111, 111)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(13, 13, 13)
+                        .addComponent(jLabel1)))
+                .addContainerGap(200, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(163, 163, 163)
-                        .addComponent(cmbOmrade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnTillbaka))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(79, 79, 79)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(66, Short.MAX_VALUE))
+                        .addGap(22, 22, 22)
+                        .addComponent(jScrollPane1)))
+                .addGap(22, 22, 22))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(53, 53, 53)
+                .addGap(45, 45, 45)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cmbOmrade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 66, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addComponent(btnTillbaka)
+                .addGap(52, 52, 52))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmbOmradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbOmradeActionPerformed
-        // TODO add your handling code here:
-                txtResultat.setText("ID" + "\t" + "Namn" + "\t" + "TELEFON" + "\n");
+        
+        txtResultat.setText("ID" + "\t" + "Namn" + "\t" + "TELEFON" + "\n");
         String valdOmrade = cmbOmrade.getSelectedItem().toString();
         ArrayList<HashMap<String, String>> soktOmrade = new ArrayList<HashMap<String, String>>();
         try{
@@ -136,7 +151,12 @@ public class SeOmradesChef extends javax.swing.JFrame {
             } catch (NullPointerException n) {
                 JOptionPane.showMessageDialog(null, valdOmrade + ": Har ingen Chef");
             }
+        
     }//GEN-LAST:event_cmbOmradeActionPerformed
+
+    private void btnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTillbakaActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnTillbakaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,6 +184,7 @@ public class SeOmradesChef extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(SeOmradesChef.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -171,9 +192,10 @@ public class SeOmradesChef extends javax.swing.JFrame {
                 new SeOmradesChef(idb).setVisible(true);
             }
         });
+    
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnTillbaka;
     private javax.swing.JComboBox<String> cmbOmrade;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;

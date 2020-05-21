@@ -152,4 +152,15 @@ public class Validering {
         }
         return resultat;  
     }
+            static public boolean textNotEmpty(JTextField tf){ // vi har gjort en validering f�r tomma texter 
+      
+        if(tf.getText().isEmpty()){ // en if sats, h�r st�r det att om text f�ltet �r tom 
+            JOptionPane.showMessageDialog(null, "Textfältet är tomt!"); // s� ska detta meddelande komma upp och s�ga till 
+            tf.requestFocus();//denna g�r att den g�r tillbaka till f�ltet som var tom
+            return false;// returnar false 
+        }
+        else{
+            return true;// eller returnarar true 
+        }
+}
 }

@@ -6,57 +6,33 @@
 package Agent;
 
 import Validering.Validering;
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.HashMap;
 import javax.swing.JOptionPane;
 import oru.inf.InfDB;
 import oru.inf.InfException;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+
+
 
 /**
  *
- * @author marku
+ * @author Vincent
  */
 public class SokAliensMellan2Datum extends javax.swing.JFrame {
 
+    /**
+     * Creates new form SokAliensMellan2Datum
+     */
     private InfDB idb;
-
+    
+    
     public SokAliensMellan2Datum(InfDB idb) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.idb = idb;
-    }
-
-    private void StringToSQLDateExample() {
-
-        String str1 = txtDatum1.getText();
-        Date date1 = Date.valueOf(str1);//converting string into sql date.
-        String str2 = txtDatum2.getText();
-        Date date2 = Date.valueOf(str2);
-
-        System.out.println(date1);
-        System.out.println(date2);
-
-        String fraga = ("SELECT ALIEN_ID, NAMN FROM ALIEN WHERE REGISTRERINGSDATUM BETWEEN " + date1 + " AND " + date2 + ";");
-        System.out.println(fraga);
-
-        if (Validering.textFaltHarVarde(txtDatum1) && Validering.textFaltHarVarde(txtDatum2)) {
-            try {
-
-                ArrayList<HashMap<String, String>> sokResultat = idb.fetchRows("SELECT ALIEN_ID, NAMN FROM ALIEN WHERE REGISTRERINGSDATUM BETWEEN '" + date1 + "' AND '" + date2 + "'");
-
-                for (HashMap<String, String> alien : sokResultat) {
-                    txtAreaResultat.append(alien.get("ALIEN_ID") + "\t");
-                    txtAreaResultat.append(" " + alien.get("NAMN") + "\n");
-                }
-            } catch (InfException e) {
-                JOptionPane.showMessageDialog(null, e.getMessage());
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "V�nligen Skriv In Datum I textf�lten!");
-
-        }
-
     }
 
     /**
@@ -68,24 +44,24 @@ public class SokAliensMellan2Datum extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         txtDatum1 = new javax.swing.JTextField();
         txtDatum2 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        btnSok = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtAreaResultat = new javax.swing.JTextArea();
-        btnSok = new javax.swing.JButton();
         btnTillbaka = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Från datum");
+        txtDatum1.setText("2008-01-30");
 
-        jLabel2.setText("Till datum");
+        txtDatum2.setText("2010-06-30");
 
-        txtAreaResultat.setColumns(20);
-        txtAreaResultat.setRows(5);
-        jScrollPane1.setViewportView(txtAreaResultat);
+        jLabel1.setText("Från datum:");
+
+        jLabel2.setText("Till datum:");
 
         btnSok.setText("Sök");
         btnSok.addActionListener(new java.awt.event.ActionListener() {
@@ -93,6 +69,10 @@ public class SokAliensMellan2Datum extends javax.swing.JFrame {
                 btnSokActionPerformed(evt);
             }
         });
+
+        txtAreaResultat.setColumns(20);
+        txtAreaResultat.setRows(5);
+        jScrollPane1.setViewportView(txtAreaResultat);
 
         btnTillbaka.setText("Tillbaka");
         btnTillbaka.addActionListener(new java.awt.event.ActionListener() {
@@ -105,65 +85,140 @@ public class SokAliensMellan2Datum extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(109, 109, 109))
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(75, 75, 75)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(txtDatum1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(65, 65, 65)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnTillbaka, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(3, 3, 3))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(btnSok))
-                            .addComponent(txtDatum2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(86, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnTillbaka)
-                .addGap(23, 23, 23))
+                            .addComponent(jLabel1)
+                            .addComponent(txtDatum1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel2)
+                            .addComponent(btnSok, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtDatum2))
+                        .addGap(86, 86, 86))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtDatum1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtDatum2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnSok)
-                .addGap(13, 13, 13)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnTillbaka)
-                .addContainerGap(15, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnTillbaka))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addGap(9, 9, 9)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtDatum1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtDatum2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSok)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTillbakaActionPerformed
-        // TODO add your handling code here:
-        this.dispose();
-    }//GEN-LAST:event_btnTillbakaActionPerformed
+    
 
+    private void StringToSQLDateExample(){
+
+        String str1=txtDatum1.getText();
+        Date date1 = Date.valueOf(str1);//converting string into sql date.
+        String str2 = txtDatum2.getText();
+        Date date2 = Date.valueOf(str2);
+        
+        System.out.println(date1);
+        System.out.println(date2);
+        
+        String fraga =("SELECT ALIEN_ID, NAMN FROM ALIEN WHERE REGISTRERINGSDATUM BETWEEN " + date1 + " AND " + date2 + ";");
+        System.out.println(fraga);
+        
+        if(Validering.textNotEmpty(txtDatum1) && Validering.textNotEmpty(txtDatum2)){
+            try{
+                
+                ArrayList<HashMap<String, String>> sokResultat = idb.fetchRows("SELECT ALIEN_ID, NAMN FROM ALIEN WHERE REGISTRERINGSDATUM BETWEEN '" + date1 + "' AND '" + date2 +"'");
+                
+                    for(HashMap<String, String> alien : sokResultat){
+                         txtAreaResultat.append(alien.get("ALIEN_ID") + "\t");
+                         txtAreaResultat.append(" " + alien.get("NAMN") + "\n");   
+               }    
+            } 
+            catch(InfException e){
+                     JOptionPane.showMessageDialog(null, e.getMessage());
+                    }
+        }
+            else{
+                    JOptionPane.showMessageDialog(null, "V�nligen Skriv In Datum I textf�lten!");
+                    
+         }  
+        
+    } 
+    
+
+    
+    
+    
+    
     private void btnSokActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSokActionPerformed
-        // TODO add your handling code here:
         txtAreaResultat.setText("");
         StringToSQLDateExample();
+        
+        /*    txtAreaResultat.setText("");
+        if(Validering.textNotEmpty(txtDatum1) && Validering.textNotEmpty(txtDatum2)){
+            ArrayList<HashMap<String, String>> sokResultat = new ArrayList<HashMap<String, String>>();
+            
+        try{
+            
+              String sokRuta1 = txtDatum1.getText();
+              SimpleDateFormat datum1 = new SimpleDateFormat("yyyy-MM-dd");
+              java.util.Date date = datum1.parse(sokRuta1);
+              
+              String sokRuta2 = txtDatum2.getText();
+              SimpleDateFormat datum2 = new SimpleDateFormat("yyyy-MM-dd");
+              java.util.Date date2 = datum2.parse(sokRuta2);
+            
+              
+             String fraga = "SELECT NAMN, ALIEN_ID FROM ALIEN WHERE REGISTRERINGSDATUM BETWEEN " + date + " AND " + date2;
+            System.out.println(fraga);
+            sokResultat = idb.fetchRows(fraga);
+             
+              
+            for(HashMap<String, String> alien : sokResultat){
+                txtAreaResultat.append(alien.get("ALIEN_ID") + "\t");
+                txtAreaResultat.append(" " + alien.get("NAMN") + "\n");
+            }
+        } 
+        catch(InfException e){
+                     JOptionPane.showMessageDialog(null, e.getMessage());
+                     
+         }
+        catch(ParseException e){
+        e.printStackTrace();
+   
+         throw new RuntimeException(e);
+        }
+        
+        } */
+    
+    //integer parseint(20180130);
     }//GEN-LAST:event_btnSokActionPerformed
+
+       
+    private void btnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTillbakaActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnTillbakaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -190,6 +245,7 @@ public class SokAliensMellan2Datum extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(SokAliensMellan2Datum.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
