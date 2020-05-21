@@ -94,7 +94,7 @@ public class NyRegistreraAlien extends javax.swing.JFrame {
 
         lblRegistreringsDatum.setText("Registreringsdatum");
 
-        txtRegistreringsDatum.setText("Ex:2019-12-20");
+        txtRegistreringsDatum.setText("Ex:2020-05-20");
 
         lblTelefonNrAlien.setText("Telefon Nummer");
 

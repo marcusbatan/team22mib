@@ -89,6 +89,7 @@ public class InloggadAdmin extends javax.swing.JFrame {
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(225, 92, 231));
 
         lblRubrikAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblRubrikAdmin.setText("Inloggad som Admin:");
