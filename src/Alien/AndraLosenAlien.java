@@ -8,7 +8,7 @@ package Alien;
 
 /**
  *
- * @author marku kalleS
+ * @author marku 
  */
 
 import Validering.Validering;

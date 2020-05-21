@@ -15,7 +15,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author erikgoransson
+ * @author marku
  */
 public class SeOmradesChef extends javax.swing.JFrame {
 

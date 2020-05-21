@@ -16,7 +16,7 @@ import oru.inf.InfDB;
 import oru.inf.InfException;
 /**
  *
- * @author hania
+ * @author marku
  */
 public class AndraAlienInfo extends javax.swing.JFrame {
 

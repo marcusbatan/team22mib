@@ -7,7 +7,7 @@ package Agent;
 
 /**
  *
- * @author hania
+ * @author kalle
  */
 import Admin.NyRegistreraEnAgent;
 import Validering.Validering;

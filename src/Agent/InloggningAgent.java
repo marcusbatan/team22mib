@@ -13,7 +13,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author hania
+ * @author marku
  */
 public class InloggningAgent extends javax.swing.JFrame {
 

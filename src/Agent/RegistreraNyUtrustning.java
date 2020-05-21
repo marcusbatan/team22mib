@@ -11,7 +11,7 @@ import oru.inf.InfDB;
 import oru.inf.InfException;
 /**
  *
- * @author erikgoransson
+ * @author celine
  */
 public class RegistreraNyUtrustning extends javax.swing.JFrame {
     private InfDB idb;

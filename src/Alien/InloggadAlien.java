@@ -12,7 +12,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author vince
+ * @author khali
  */
 public class InloggadAlien extends javax.swing.JFrame {
 

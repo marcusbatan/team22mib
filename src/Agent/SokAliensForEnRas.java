@@ -7,7 +7,7 @@ package Agent;
 
 /**
  *
- * @author hania
+ * @author marku
  */
 import oru.inf.InfDB;
 import java.util.ArrayList;
