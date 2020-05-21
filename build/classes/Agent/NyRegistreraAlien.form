@@ -23,15 +23,11 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="213" max="-2" attributes="0"/>
-              <Component id="lblNyRegistreraAlien" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="lblRegistreringsDatum" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel1" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
@@ -53,7 +49,7 @@
                                           <Component id="txtNamnNyAlien" min="-2" pref="115" max="-2" attributes="0"/>
                                           <Component id="txtRegistreringsDatum" min="-2" pref="89" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="147" max="32767" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -64,22 +60,30 @@
                           </Group>
                       </Group>
                   </Group>
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="btnTillbakaAlienRegistrering" min="-2" pref="77" max="-2" attributes="0"/>
+                          <Component id="lblAnsvarigAgentAlien" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="btnRegistreraAlien" min="-2" pref="107" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="196" max="-2" attributes="0"/>
-                              <Component id="btnTillbakaAlienRegistrering" min="-2" pref="77" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="lblAnsvarigAgentAlien" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                               <Component id="txtAnsvarigAgentAlien" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="207" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="btnRegistreraAlien" min="-2" pref="107" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="35" max="32767" attributes="0"/>
                   </Group>
               </Group>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
+              <Component id="lblNyRegistreraAlien" min="-2" pref="292" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -103,7 +107,7 @@
                   <Component id="lblTelefonNrAlien" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtTelefonNrAlien" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="24" max="32767" attributes="0"/>
+              <EmptySpace pref="7" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblTilldelatOmradeAlien" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="cmbTilldelatOmrade" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -131,6 +135,9 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="lblNyRegistreraAlien">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Dialog" size="24" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Nyregistrera Alien"/>
       </Properties>
     </Component>
@@ -154,7 +161,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtRegistreringsDatum">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Ex:2019-12-20"/>
+        <Property name="text" type="java.lang.String" value="Ex:2020-05-219"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblTelefonNrAlien">
