@@ -154,7 +154,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtRegistreringsDatum">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Ex:2019-12-20"/>
+        <Property name="text" type="java.lang.String" value="Ex:2020-05-20"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblTelefonNrAlien">
