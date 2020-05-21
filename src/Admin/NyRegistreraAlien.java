@@ -7,7 +7,7 @@ package Admin;
 
 /**
  *
- * @author hania
+ * @author celine
  */
 import Agent.*;
 import Admin.NyRegistreraEnAgent;

@@ -19,7 +19,7 @@ import java.text.ParseException;
 
 /**
  *
- * @author Vincent
+ * @author khali
  */
 public class SokAliensMellan2Datum extends javax.swing.JFrame {
 

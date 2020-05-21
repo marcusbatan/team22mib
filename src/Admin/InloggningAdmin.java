@@ -7,7 +7,7 @@ package Admin;
 
 /**
  *
- * @author vince
+ * @author marku
  */
 import Start.huvudFonster;
 import Validering.Validering;

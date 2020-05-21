@@ -15,7 +15,7 @@ import java.util.HashMap;
 
 /**
  *
- * @author erikgoransson
+ * @author marku
  */
 public class SeAllInfoAlien extends javax.swing.JFrame {
     

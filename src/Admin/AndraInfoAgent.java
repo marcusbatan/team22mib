@@ -13,7 +13,7 @@ import oru.inf.InfDB;
 import oru.inf.InfException;
 /**
  *
- * @author erikgoransson
+ * @author marku
  */
 public class AndraInfoAgent extends javax.swing.JFrame {
     
