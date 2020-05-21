@@ -14,7 +14,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author erikgoransson
+ * @author celine
  */
 public class NyRegistreraEnAgent extends javax.swing.JFrame {
 

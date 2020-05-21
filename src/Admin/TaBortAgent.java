@@ -13,7 +13,7 @@ import oru.inf.InfDB;
 import oru.inf.InfException;
 /**
  *
- * @author erikgoransson
+ * @author marku
  */
 public class TaBortAgent extends javax.swing.JFrame {
     private InfDB idb;

@@ -13,7 +13,7 @@ import java.util.HashMap;
 
 /**
  *
- * @author erikgoransson
+ * @author celine
  */
 public class SokAlienEfterPlats extends javax.swing.JFrame {
   

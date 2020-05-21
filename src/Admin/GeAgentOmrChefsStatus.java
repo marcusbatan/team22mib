@@ -14,7 +14,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author Vincent
+ * @author marku
  */
 public class GeAgentOmrChefsStatus extends javax.swing.JFrame {
 
